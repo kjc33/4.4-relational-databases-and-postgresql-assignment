@@ -16,3 +16,15 @@ INSERT INTO countries (name) VALUES ('USA'), ('Canada'), ('Mexico');
 
 -- Insert data into the addresses table
 INSERT INTO addresses (user_id, country_id) VALUES (1, 1), (2, 1), (2, 3);
+
+-- List all the countries
+SELECT * FROM countries;
+
+-- List all user emails
+SELECT email FROM users;
+
+-- List all user firstNames that have the letter "e" in the name
+SELECT firstName FROM users WHERE firstName LIKE '%e%';
+
+-- List all the countries where user_id = 2 lives
+SELECT countries.name FROM addresses JOIN countries ON addresses.country_id = countries.id WHERE addresses.user_id = 2;
